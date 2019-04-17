@@ -16,19 +16,19 @@ function Calculation() {
 	var OPNWhole = 0;
 	var SNWWhole = 0;
 	var MasterArray = [];
-//	var Day = document.getElementById('userInputDay').value;
-//	var Month = document.getElementById('userInputMonth').value;
-//	var Year = document.getElementById('userInputYear').value;
-//	var FirstName = document.getElementById('userInputFirstName').value;
-//	var MiddleName = document.getElementById('userInputMiddleName').value;
-//	var LastName = document.getElementById('userInputLastName').value;
+	var Day = document.getElementById('userInputDay').value;
+	var Month = document.getElementById('userInputMonth').value;
+	var Year = document.getElementById('userInputYear').value;
+	var FirstName = document.getElementById('userInputFirstName').value;
+	var MiddleName = document.getElementById('userInputMiddleName').value;
+	var LastName = document.getElementById('userInputLastName').value;
 //	***************************************************************************************************************************************************************************************************************
-//	var BirthDay = ("" + document.getElementById('userInputDay').value + document.getElementById('userInputMonth').value + document.getElementById('userInputYear').value).toString();
-//	var FullName = ("" + document.getElementById('userInputFirstName').value + document.getElementById('userInputMiddleName').value + document.getElementById('userInputLastName').value).toString().toUpperCase();
+	var BirthDay = ("" + document.getElementById('userInputDay').value + document.getElementById('userInputMonth').value + document.getElementById('userInputYear').value).toString();
+	var FullName = ("" + document.getElementById('userInputFirstName').value + document.getElementById('userInputMiddleName').value + document.getElementById('userInputLastName').value).toString().toUpperCase();
 //	***************************************************************************************************************************************************************************************************************
 //	Testing Var ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
-	var BirthDay = (741993).toString();
-	var FullName = "jakovdavnegrams".toString().toUpperCase();
+//	var BirthDay = (741993).toString();
+//	var FullName = "jakovdavnegrams".toString().toUpperCase();
 //	Testing Var ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 	var FullNameLength = parseInt(FullName.length);
 	var BirthDayLength = parseInt(BirthDay.length);
