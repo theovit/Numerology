@@ -8,20 +8,20 @@
     <script src="Calculation.1.js"></script>
     <h1>My First Numerology Project</h1>
     <form>
-        Month:<br>
+        modifier="material"<br>
         <ons-input type="text" maxlength="2" name="userInputMonth" id='userInputMonth' modifier="material" placeholder="Month"></ons-input>
-        <br> Day:
+        <br> modifier="underbar"
         <br>
-        <input type="text" maxlength="2" name="userInputDay" id='userInputDay'>
-        <br> Year:
+        <ons-input type="text" maxlength="2" name="userInputDay" id='userInputDay' modifier="underbar" placeholder="Day">
+        <br> modifier="material transparent"
         <br>
-        <input type="text" maxlength="4" name="userInputYear" id='userInputYear'>
-        <br><br> First Name:<br>
-        <input type="text" name="userInputFirstName" id='userInputFirstName'>
-        <br> Middle Name:<br>
-        <input type="text" name="userInputMiddleName" id='userInputMiddleName'>
-        <br> Last Name:<br>
-        <input type="text" name="userInputLastName" id='userInputLastName'>
+        <ons-input type="text" maxlength="4" name="userInputYear" id='userInputYear' modifier="material transparent" placeholder="Year">
+        <br><br> modifier="underbar transparent"<br>
+        <ons-input type="text" name="userInputFirstName" id='userInputFirstName' modifier="underbar transparent" placeholder="First Name">
+        <br> modifier="material underbar"<br>
+        <ons-input type="text" name="userInputMiddleName" id='userInputMiddleName' modifier="material underbar" placeholder="Middle Name">
+        <br> modifier="transparent material underbar"<br>
+        <ons-input type="text" name="userInputLastName" id='userInputLastName' modifier="transparent material underbar" placeholder="Last Name">
         <br><br>
         <!--
         <input type="button" value="Calculate" name="Calculate" onclick="Calculation()" />
