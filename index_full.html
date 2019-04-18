@@ -6,7 +6,7 @@
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <script src="Calculation.1.js"></script>
 <style>
-    body {margin-left:24px;}
+	#main {Margin:1%;}
     ons-row {
 		vertical-align:center;
 		margin:5px;
@@ -16,8 +16,9 @@
 </style>
 </head>
 <body>
-    <h1>My First Numerology Project</h1>
+	<div id="main">
     <ons-col>
+		<ons-row><h1>My First Numerology Project</h1></ons-row>
         <ons-row><p>Please Enter Your Birth Date: MM/DD/YYYY</p></ons-row>
         <ons-row><ons-input type="text" maxlength="2" name="userInputMonth" id='userInputMonth' modifier="transparent material underbar" placeholder="Month"></ons-input></ons-row>
         <ons-row><ons-input type="text" maxlength="2" name="userInputDay" id='userInputDay' modifier="transparent material underbar" placeholder="Day"></ons-input></ons-row>
@@ -32,5 +33,6 @@
         <ons-row><div id="OPNResult"></div></ons-row>
         <ons-row><div id="PODNResult"></div></ons-row>
     </ons-col>
+	</div>
 </body>
 </html>
