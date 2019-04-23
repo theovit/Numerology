@@ -5,34 +5,28 @@
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <script src="Calculation.1.js"></script>
-<style>
-	#main {Margin:1%;}
-    ons-row {
-		vertical-align:center;
-		margin:5px;
-		height:auto;
-	}
-    ons-col {width:100%;}
-</style>
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-	<div id="main">
-    <ons-col>
-		<ons-row><h1>My First Numerology Project</h1></ons-row>
-        <ons-row><p>Please Enter Your Birth Date: MM/DD/YYYY</p></ons-row>
-        <ons-row><ons-input type="text" maxlength="2" name="userInputMonth" id='userInputMonth' modifier="transparent material underbar" placeholder="Month"></ons-input></ons-row>
-        <ons-row><ons-input type="text" maxlength="2" name="userInputDay" id='userInputDay' modifier="transparent material underbar" placeholder="Day"></ons-input></ons-row>
-        <ons-row><ons-input type="text" maxlength="4" name="userInputYear" id='userInputYear' modifier="transparent material underbar" placeholder="Year"></ons-input></ons-row>
-        <ons-row><p>Please Enter Your Full Name on Your Birth Certificate</p></ons-row>
-        <ons-row><ons-input type="text" name="userInputFirstName" id='userInputFirstName' modifier="transparent material underbar" placeholder="First Name"></ons-input></ons-row>
-        <ons-row><ons-input type="text" name="userInputMiddleName" id='userInputMiddleName' modifier="transparent material underbar" placeholder="Middle Name"></ons-input></ons-row>
-        <ons-row><ons-input type="text" name="userInputLastName" id='userInputLastName' modifier="transparent material underbar" placeholder="Last Name"></ons-input></ons-row>
-        <ons-row><ons-button onclick="Calculation()">Calculate</ons-button></ons-row>
-        <ons-row><div id="LLNResult"></div></ons-row>
-        <ons-row><div id="SNResult"></div></ons-row>
-        <ons-row><div id="OPNResult"></div></ons-row>
-        <ons-row><div id="PODNResult"></div></ons-row>
-    </ons-col>
-	</div>
+    <div calss="outer-div">
+	    <div class="inner-div">
+            <ons-col>
+		        <ons-row><h1>My First Numerology Project</h1></ons-row>
+                <ons-row><p>Please Enter Your Birth Date: MM/DD/YYYY</p></ons-row>
+                <ons-row><ons-input type="text" maxlength="2" name="userInputMonth" id='userInputMonth' modifier="transparent material underbar" placeholder="Month"></ons-input></ons-row>
+                <ons-row><ons-input type="text" maxlength="2" name="userInputDay" id='userInputDay' modifier="transparent material underbar" placeholder="Day"></ons-input></ons-row>
+                <ons-row><ons-input type="text" maxlength="4" name="userInputYear" id='userInputYear' modifier="transparent material underbar" placeholder="Year"></ons-input></ons-row>
+                <ons-row><p>Please Enter Your Full Name on Your Birth Certificate</p></ons-row>
+                <ons-row><ons-input type="text" name="userInputFirstName" id='userInputFirstName' modifier="transparent material underbar" placeholder="First Name"></ons-input></ons-row>
+                <ons-row><ons-input type="text" name="userInputMiddleName" id='userInputMiddleName' modifier="transparent material underbar" placeholder="Middle Name"></ons-input></ons-row>
+                <ons-row><ons-input type="text" name="userInputLastName" id='userInputLastName' modifier="transparent material underbar" placeholder="Last Name"></ons-input></ons-row>
+                <ons-row><ons-button onclick="Calculation()">Calculate</ons-button></ons-row>
+                <ons-row><div id="LLNResult"></div></ons-row>
+                <ons-row><div id="SNResult"></div></ons-row>
+                <ons-row><div id="OPNResult"></div></ons-row>
+                <ons-row><div id="PODNResult"></div></ons-row>
+            </ons-col>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,26 @@
+ons-row {
+    text-align:center;
+    margin:5px;
+    height:auto;
+}
+
+ons-input[type="text"] {
+     margin: 0 auto;
+}
+
+ons-button[onclick="Calculation()"]{
+     margin: 0 auto;
+}
+
+ons-col {width:100%;}
+
+.outer-div
+{
+     padding: 30px;
+}
+.inner-div
+{
+     margin: auto;
+     width: 253px;
+     height: 100px;  
+}
