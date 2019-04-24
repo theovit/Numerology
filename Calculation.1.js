@@ -1,18 +1,56 @@
 function Calculation() {
-	var NameTemp1 = 0;
-	var OPNWhole = 0;
-	var SNWWhole = 0;
 	var Day = document.getElementById('userInputDay').value;
 	var Month = document.getElementById('userInputMonth').value;
 	var Year = document.getElementById('userInputYear').value;
 	//	***************************************************************************************************************************************************************************************************************
 	var FullName = ("" + document.getElementById('userInputFirstName').value + document.getElementById('userInputMiddleName').value + document.getElementById('userInputLastName').value).toString().toUpperCase();
 	//	***************************************************************************************************************************************************************************************************************
-	var FullNameLength = parseInt(FullName.length);
+
+	var Name = convert(FullName)
+	var LLNWhole = parseInt(Month) + parseInt(Day) + parseInt(reduce(Year))
+	var LLNReduced = reduce(LLNWhole)
+	var SNReduced = reduce(Name.SNWWhole)
+	var OPNReduced = reduce(Name.OPNWhole)
+	var PODReduced = reduce(Name.PODNWhole)
+	var LLNResult = "Your Life Lesson Number Is:" + LLNWhole + "/" + LLNReduced;
+	var OPNResult = "Your Outer Personality Number is:" + Name.OPNWhole + "/" + OPNReduced;
+	var SNResult = "Your Soul Number is:" + Name.SNWWhole + "/" + SNReduced;
+	var PODNResult = "Your Path of Destiny Number is:" + Name.PODNWhole + "/" + PODReduced;
+	if (LLNWhole != 0 && isNaN(LLNWhole) == false) {
+		document.getElementById("LLNResult").innerHTML = LLNResult;
+	}
+	if (Name.PODNWhole != 0) {
+		document.getElementById("OPNResult").innerHTML = OPNResult;
+		document.getElementById("SNResult").innerHTML = SNResult;
+		document.getElementById("PODNResult").innerHTML = PODNResult;
+	}
+
+}
+
+function reduce(Value) {
+	var i = 0;
+	var ValueLength = parseInt(Value.toString().length);
+	var ValueTemp = 0;
+	while (i < ValueLength) {
+		ValueTemp += parseInt(Value.toString().charAt(i));
+		i++;
+	}
+	if (!isNaN(ValueTemp)) {
+		if (parseInt(ValueTemp.toString().length) >= 2) {
+			ValueTemp = reduce(ValueTemp)
+		}
+		return ValueTemp
+	}
+}
+
+function convert(Value) {
+	var FullNameLength = parseInt(Value.length);
 	var PODNWhole = 0;
+	var OPNWhole = 0;
+	var SNWWhole = 0;
 	var i = 0;
 	while (i < FullNameLength) {
-		NameTemp1 = FullName.charAt(i);
+		NameTemp1 = Value.charAt(i);
 		var OPNTemp = 0;
 		var SNTemp = 0;
 		if (NameTemp1 == "A") SNTemp = 1;
@@ -40,39 +78,10 @@ function Calculation() {
 		PODNWhole += OPNTemp;
 		i++;
 	}
-
-	var LLNWhole = parseInt(Month) + parseInt(Day) + parseInt(reduce(Year))
-	var LLNReduced = reduce(LLNWhole)
-	var SNReduced = reduce(SNWWhole)
-	var OPNReduced = reduce(OPNWhole)
-	var PODReduced = reduce(PODNWhole)
-	var LLNResult = "Your Life Lesson Number Is:" + LLNWhole + "/" + LLNReduced;
-	var OPNResult = "Your Outer Personality Number is:" + OPNWhole + "/" + OPNReduced;
-	var SNResult = "Your Soul Number is:" + SNWWhole + "/" + SNReduced;
-	var PODNResult = "Your Path of Destiny Number is:" + PODNWhole + "/" + PODReduced;
-	if (LLNWhole != 0 && isNaN(LLNWhole) == false) {
-		document.getElementById("LLNResult").innerHTML = LLNResult;
-	}
-	if (PODNWhole != 0) {
-		document.getElementById("OPNResult").innerHTML = OPNResult;
-		document.getElementById("SNResult").innerHTML = SNResult;
-		document.getElementById("PODNResult").innerHTML = PODNResult;
+	return{
+		OPNWhole: OPNWhole,
+		SNWWhole: SNWWhole,
+		PODNWhole: PODNWhole
 	}
 
-}
-
-function reduce(Value) {
-	var i = 0;
-	var ValueLength = parseInt(Value.toString().length);
-	var ValueTemp = 0;
-	while (i < ValueLength) {
-		ValueTemp += parseInt(Value.toString().charAt(i));
-		i++;
-	}
-	if (!isNaN(ValueTemp)) {
-		if (parseInt(ValueTemp.toString().length) >= 2) {
-			ValueTemp = reduce(ValueTemp)
-		}
-		return ValueTemp
-	}
 }
