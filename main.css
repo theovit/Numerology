@@ -8,8 +8,9 @@ ons-input[type="text"] {
      margin: 0 auto;
 }
 
-ons-button[onclick="Calculation()"]{
+.CalculateButton{
      margin: 0 auto;
+     margin-top: 10Px;
 }
 
 ons-col {width:100%;}
