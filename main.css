@@ -1,7 +1,10 @@
+body{
+     background-image: radial-gradient(rgb(255, 255, 255), rgba(128, 128, 128, 0.486), rgb(0, 0, 0))
+}
 ons-row {
-    text-align:center;
-    margin:5px;
-    height:auto;
+    text-align: center;
+    margin: 5px;
+    height: auto;
 }
 
 ons-input[type="text"] {
@@ -24,4 +27,7 @@ ons-col {width:100%;}
      margin: auto;
      width: 253px;
      height: 100px;  
+}
+.UserInput{
+     padding-bottom: 5px;
 }
