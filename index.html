@@ -9,6 +9,25 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="Calculation.1.js"></script>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <script>
+        $('body').on('keydown', 'input, select, textarea', function (e) {
+            var self = $(this)
+                , form = self.parents('form:eq(0)')
+                , focusable
+                , next
+                ;
+            if (e.keyCode == 13) {
+                focusable = form.find('input,a,select,button,textarea').filter(':visible');
+                next = focusable.eq(focusable.index(this) + 1);
+                if (next.length) {
+                    next.focus();
+                } else {
+                    form.submit();
+                }
+                return false;
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -22,34 +41,36 @@
                     <p>Please Enter Your Birth Date: MM/DD/YYYY</p>
                 </ons-row>
                 <ons-row>
-                    <ons-input class="UserInput" autofocus inputmode="numeric" type="text" maxlength="2" name="userInputMonth" id='userInputMonth'
-                        modifier="transparent material underbar" placeholder="Month" float></ons-input>
+                    <ons-input tabindex="0" class="UserInput" autofocus inputmode="numeric" type="text" maxlength="2"
+                        name="userInputMonth" id='userInputMonth' modifier="transparent material underbar"
+                        placeholder="Month" float></ons-input>
                 </ons-row>
                 <ons-row>
-                    <ons-input class="UserInput" inputmode="numeric" type="text" maxlength="2" name="userInputDay" id='userInputDay'
-                        modifier="transparent material underbar" placeholder="Day" float></ons-input>
+                    <ons-input tabindex="1" class="UserInput" inputmode="numeric" type="text" maxlength="2" name="userInputDay"
+                        id='userInputDay' modifier="transparent material underbar" placeholder="Day" float></ons-input>
                 </ons-row>
                 <ons-row>
-                    <ons-input class="UserInput" inputmode="numeric" type="text" maxlength="4" name="userInputYear" id='userInputYear'
-                        modifier="transparent material underbar" placeholder="Year" float></ons-input>
+                    <ons-input tabindex="2" class="UserInput" inputmode="numeric" type="text" maxlength="4" name="userInputYear"
+                        id='userInputYear' modifier="transparent material underbar" placeholder="Year" float>
+                    </ons-input>
                 </ons-row>
                 <ons-row>
                     <p>Please Enter Your Full Name on Your Birth Certificate</p>
                 </ons-row>
                 <ons-row>
-                    <ons-input class="UserInput" type="text" name="userInputFirstName" id='userInputFirstName'
+                    <ons-input tabindex="3" class="UserInput" type="text" name="userInputFirstName" id='userInputFirstName'
                         modifier="transparent material underbar" placeholder="First Name" float></ons-input>
                 </ons-row>
                 <ons-row>
-                    <ons-input class="UserInput" type="text" name="userInputMiddleName" id='userInputMiddleName'
+                    <ons-input tabindex="4" class="UserInput" type="text" name="userInputMiddleName" id='userInputMiddleName'
                         modifier="transparent material underbar" placeholder="Middle Name" float></ons-input>
                 </ons-row>
                 <ons-row>
-                    <ons-input class="UserInput" type="text" name="userInputLastName" id='userInputLastName'
+                    <ons-input tabindex="5" class="UserInput" type="text" name="userInputLastName" id='userInputLastName'
                         modifier="transparent material underbar" placeholder="Last Name" float></ons-input>
                 </ons-row>
                 <ons-row>
-                    <div class="CalculateButton">
+                    <div tabindex="6" class="CalculateButton">
                         <ons-button onclick="Calculation()">Calculate</ons-button>
                     </div>
                 </ons-row>
