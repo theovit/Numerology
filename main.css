@@ -22,13 +22,18 @@ ons-col {width:100%;}
 .outer-div
 {
      padding: 30px;
+     height: 100%;
 }
 .inner-div
 {
      margin: auto;
      width: 253px;
-     height: 100px;  
+     height: 100%;  
 }
 .UserInput{
      padding-bottom: 5px;
+}
+.text{
+     text-align: center;
+     width: 100%;
 }
