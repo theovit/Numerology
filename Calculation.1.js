@@ -12,10 +12,10 @@ function Calculation() {
 	var SNReduced = reduce(Name.SNWWhole)
 	var OPNReduced = reduce(Name.OPNWhole)
 	var PODReduced = reduce(Name.PODNWhole)
-	var LLNResult = "Your Life Lesson Number Is:" + LLNWhole + "/" + LLNReduced;
-	var OPNResult = "Your Outer Personality Number is:" + Name.OPNWhole + "/" + OPNReduced;
-	var SNResult = "Your Soul Number is:" + Name.SNWWhole + "/" + SNReduced;
-	var PODNResult = "Your Path of Destiny Number is:" + Name.PODNWhole + "/" + PODReduced;
+	var LLNResult = "Life Lesson Number Is: " + LLNWhole + "/" + LLNReduced;
+	var OPNResult = "Outer Personality Number is: " + Name.OPNWhole + "/" + OPNReduced;
+	var SNResult = "Soul Number is: " + Name.SNWWhole + "/" + SNReduced;
+	var PODNResult = "Path of Destiny Number is: " + Name.PODNWhole + "/" + PODReduced;
 	if (LLNWhole != 0 && isNaN(LLNWhole) == false) {
 		document.getElementById("LLNResult").innerHTML = LLNResult;
 	}
