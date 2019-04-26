@@ -4,17 +4,17 @@ body{
 }
 ons-row {
     text-align: center;
-    margin: 5px;
+    margin-top: auto;
     height: auto;
 }
 
 ons-input[type="text"] {
-     margin: 0 auto;
+     margin: 3px auto;
 }
 
 .CalculateButton{
-     margin: 0 auto;
-     margin-top: 10Px;
+     margin: 10px auto;
+     margin-top: 2Px;
 }
 
 ons-col {width:100%;}
