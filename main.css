@@ -1,5 +1,6 @@
 body{
-     background-image: radial-gradient(rgb(255, 255, 255), rgba(128, 128, 128, 0.486), rgb(0, 0, 0));
+     background-image: url("bg.png");
+     background-repeat: repeat-x;
      overflow: visible;
 }
 ons-row {
@@ -7,28 +8,26 @@ ons-row {
     margin-top: auto;
     height: auto;
 }
-
 ons-input[type="text"] {
      margin: 3px auto;
 }
-
 .CalculateButton{
      margin: 10px auto;
      margin-top: 2Px;
 }
-
-ons-col {width:100%;}
-
-.outer-div
-{
-     padding: 30px;
+ons-col{
+     width:100%;
+}
+#outer-div{
      height: 100%;
 }
-.inner-div
-{
+.inner-div{
      margin: auto;
-     width: 253px;
+     width: 64%;
      height: 100%;  
+     background-color: white;
+     box-shadow: 5px 5px 21px black;
+
 }
 .UserInput{
      padding-bottom: 5px;
