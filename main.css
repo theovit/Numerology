@@ -1,8 +1,4 @@
 body{
-     background-image: url("bg.jpg");
-     background-repeat: repeat-y;
-     background-position: center;
-     background-size: cover;
      overflow: visible;
 }
 ons-row {
@@ -28,7 +24,6 @@ ons-col{
      width: 64%;
      height: 100%;  
      background-color: white;
-     box-shadow: 5px 5px 21px black;
 
 }
 .UserInput{
