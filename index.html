@@ -42,7 +42,7 @@
             <!--End of Onsen Nav Bar-->
         </div>
     </div>
-    
+
     <!--Start of Page Templet Home-->
     <template id="home.html">
         <!--Start of Top Nav Bar-->
@@ -59,7 +59,9 @@
             </ons-toolbar>
             <!--End of Top Nav Bar-->
             <!--Start for Page Content-->
+
             <ons-col>
+
                 <form>
                     <ons-row>
                         <p class="text">Please Enter Your Birth Date: MM/DD/YYYY</p>
@@ -102,10 +104,17 @@
                     </ons-row>
                     <ons-row>
                         <div tabindex="6" class="CalculateButton">
-                            <ons-button onclick="Calculation()">Calculate</ons-button>
+                            <ons-button onclick="findY()">Calculate</ons-button>
                         </div>
                     </ons-row>
                 </form>
+                <ons-row>
+                    <div id="confirm">
+                        <div class="message"></div>
+                        <button class="yes">Vowel</button>
+                        <button class="no">Constant</button>
+                    </div>
+                </ons-row>
                 <ons-row>
                     <div id="LLNResult" class="text"></div>
                 </ons-row>
@@ -123,6 +132,20 @@
         </ons-page>
     </template>
     <!--End of Page Templet Home-->
+
+    <template id="alert-dialog.html">
+        <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
+            <div class="alert-dialog-title">Alert</div>
+            <div class="alert-dialog-content">
+                It seems you have a Y in your name. Please, select whether it sounds like a Constant or a Vowel.
+            </div>
+            <div class="alert-dialog-footer">
+                <ons-alert-dialog-button onclick="hideAlertDialog()">Constant</ons-alert-dialog-button>
+                <ons-alert-dialog-button onclick="hideAlertDialog()">Vowel</ons-alert-dialog-button>
+            </div>
+        </ons-alert-dialog>
+    </template>
+
 </body>
 
 </html>

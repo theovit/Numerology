@@ -43,14 +43,14 @@ if (isMobile == true) {
 	});
 }
 
-function Calculation() {
+function Calculation(FoundY) {
 	//pulls in HTML Elements
 	var Day = document.getElementById('userInputDay').value;
 	var Month = document.getElementById('userInputMonth').value;
 	var Year = document.getElementById('userInputYear').value;
 	var FullName = ("" + document.getElementById('userInputFirstName').value + document.getElementById('userInputMiddleName').value + document.getElementById('userInputLastName').value).toString().toUpperCase();
 	//Starts using the "convert()" function to assign numbers to letters
-	var Name = convert(FullName)
+	var Name = convert(FullName, FoundY)
 	//Starts the reduction process and addition 
 	var LLNWhole = parseInt(Month) + parseInt(Day) + parseInt(reduce(Year, true))
 	var LLNReduced = reduce(LLNWhole)
@@ -97,7 +97,26 @@ Each letter has a number assigned to it based on its position in the alphabet.
 A=1 B=2 J=(10)1 U=(21)3 and on. From there all the Vowles then contents are added together.
 Creating two numbers, which then get added together to create the 3rd.
 All three numbers will be reduced by the end*/
-function convert(Value) {
+
+function findY() {
+	var FullName = ("" + document.getElementById('userInputFirstName').value + document.getElementById('userInputMiddleName').value + document.getElementById('userInputLastName').value).toString().toUpperCase();
+	var FullNameLength = parseInt(FullName.length);
+	var i = 0;
+	while (i < FullNameLength) {
+		NameTemp1 = FullName.charAt(i);
+		if (NameTemp1 == "Y") {
+			var FoundY = true;
+		}
+		i++
+	}
+	if (FoundY == true) {
+		functionConfirm("You seam to have a Y in your name. Which sound dose it make?", function Yes() { Calculation("V") }, function No() { Calculation("C") })
+	} else {
+		Calculation()
+	}
+}
+
+function convert(Value, FoundY) {
 	var FullNameLength = parseInt(Value.length);
 	var PODNWhole = 0;
 	var OPNWhole = 0;
@@ -119,8 +138,10 @@ function convert(Value) {
 		if (NameTemp1 == "O") SNTemp = 6;
 		if (NameTemp1 == "G" || NameTemp1 == "P") OPNTemp = 7;
 		if (NameTemp1 == "Y") {
-			if (confirm('You seem to have a Y in your name.')) {
-
+			if (FoundY == "V") {
+				SNTemp = 7;
+			} else if (FoundY == "C") {
+				OPNTemp = 7;
 			}
 		}
 		if (NameTemp1 == "H" || NameTemp1 == "Q" || NameTemp1 == "Z") OPNTemp = 8;
@@ -139,16 +160,29 @@ function convert(Value) {
 	}
 }
 
+function functionConfirm(msg, myYes, myNo) {
+	var confirmBox = $("#confirm");
+	confirmBox.find(".message").text(msg);
+	confirmBox.find(".yes,.no").unbind().click(function () {
+		confirmBox.hide();
+	});
+	confirmBox.find(".yes").click(myYes);
+	confirmBox.find(".no").click(myNo);
+	confirmBox.show();
+}
+
 window.fn = {};
 
-window.fn.open = function() {
-  var menu = document.getElementById('menu');
-  menu.open();
+window.fn.open = function () {
+	var menu = document.getElementById('menu');
+	menu.open();
 };
 
-window.fn.load = function(page) {
-  var content = document.getElementById('content');
-  var menu = document.getElementById('menu');
-  content.load(page)
-    .then(menu.close.bind(menu));
-};
+window.fn.load = function (page) {
+	var content = document.getElementById('content');
+	var menu = document.getElementById('menu');
+	content.load(page)
+		.then(menu.close.bind(menu));
+}
+
+
