@@ -45,6 +45,9 @@ if (isMobile == true) {
 
 function Calculation(FoundY) {
 	document.getElementById("overlay").style.display = "none";
+	var dayToDay = new Date().getDate();
+	var monthToDay = new Date().getMonth()+1;
+	var yearToDay = new Date().getFullYear();
 	//pulls in HTML Elements
 	var Day = document.getElementById('userInputDay').value;
 	var Month = document.getElementById('userInputMonth').value;
@@ -52,20 +55,29 @@ function Calculation(FoundY) {
 	var FullName = ("" + document.getElementById('userInputFirstName').value + document.getElementById('userInputMiddleName').value + document.getElementById('userInputLastName').value).toString().toUpperCase();
 	//Starts using the "convert()" function to assign numbers to letters
 	var Name = convert(FullName, FoundY)
+	//Starts personal year
+	if (monthToDay > Month && dayToDay > Day){
+		var personalYear = parseInt(Month) + parseInt(Day) + parseInt(reduce(yearToDay, true))
+	} else {
+		var personalYear = parseInt(Month) + parseInt(Day) + parseInt(reduce(yearToDay-1, true))
+	}
 	//Starts the reduction process and addition 
 	var LLNWhole = parseInt(Month) + parseInt(Day) + parseInt(reduce(Year, true))
 	var LLNReduced = reduce(LLNWhole)
 	var SNReduced = reduce(Name.SNWWhole)
 	var OPNReduced = reduce(Name.OPNWhole)
 	var PODReduced = reduce(Name.PODNWhole)
+	var personalYearReduced = reduce(personalYear)
 	//Sets the vareables for output to HTML
 	var LLNResult = "Life Lesson: " + LLNWhole + "/" + LLNReduced;
 	var OPNResult = "Outer Personality: " + Name.OPNWhole + "/" + OPNReduced;
 	var SNResult = "Soul: " + Name.SNWWhole + "/" + SNReduced;
 	var PODNResult = "Path of Destiny: " + Name.PODNWhole + "/" + PODReduced;
+	var personalYearResult = "Personal Year: " + personalYear + "/" + personalYearReduced;
 	//Adds the new calculations to the HTML
 	if (LLNWhole != 0 && isNaN(LLNWhole) == false) {
 		document.getElementById("LLNResult").innerHTML = LLNResult;
+		document.getElementById("PersonalYear").innerHTML = personalYearResult;
 	}
 	if (Name.PODNWhole != 0) {
 		document.getElementById("OPNResult").innerHTML = OPNResult;
