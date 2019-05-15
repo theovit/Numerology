@@ -44,6 +44,7 @@ if (isMobile == true) {
 }
 
 function Calculation(FoundY) {
+	document.getElementById("overlay").style.display = "none";
 	//pulls in HTML Elements
 	var Day = document.getElementById('userInputDay').value;
 	var Month = document.getElementById('userInputMonth').value;
@@ -110,6 +111,7 @@ function findY() {
 		i++
 	}
 	if (FoundY == true) {
+		document.getElementById("overlay").style.display = "block";
 		functionConfirm("You seam to have a Y in your name. Which sound dose it make?", function Yes() { Calculation("V") }, function No() { Calculation("C") })
 	} else {
 		Calculation()
