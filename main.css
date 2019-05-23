@@ -1,80 +1,77 @@
-body{
-     overflow: visible;
+body {
+  overflow: visible;
 }
 ons-row {
-    text-align: center;
-    margin-top: auto;
-    height: auto;
+  text-align: center;
+  margin-top: auto;
+  height: auto;
 }
 ons-input[type="text"] {
-     margin: 3px auto;
+  margin: 3px auto;
 }
-.CalculateButton{
-     margin: 10px auto;
-     margin-top: 2Px;
+.CalculateButton {
+  margin: 10px auto;
+  margin-top: 2px;
 }
-ons-col{
-     width:100%;
+ons-col {
+  width: 100%;
 }
-#outer-div{
-     height: 100%;
+#outer-div {
+  height: 100%;
 }
-.inner-div{
-     margin: auto;
-     width: 64%;
-     height: 100%;  
-     background-color: white;
-
+.inner-div {
+  margin: auto;
+  width: 64%;
+  height: 100%;
+  background-color: white;
 }
-.UserInput{
-     padding-bottom: 5px;
+.UserInput {
+  padding-bottom: 5px;
 }
-.text{
-     text-align: center;
-     width: 100%;
+.text {
+  text-align: center;
+  width: 100%;
+  margin: 12px;
 }
-
-
-
 
 #confirm {
-     display: none;
-     background-color: rgb(78, 126, 236);
-     border: 1px solid #aaa;
-     border-radius: 5px;
-     position: fixed;
-     width: 200px;
-     left: 50%;
-     margin-left: -100px;
-     margin-top: 368px;
-     padding: 6px 8px 8px;
-     box-sizing: border-box;
-     text-align: center;
-  }
-  #confirm button {
-     background-color: #48E5DA;
-     display: inline-block;
-     border-radius: 5px;
-     border: 1px solid #aaa;
-     padding: 5px;
-     text-align: center;
-     width: 80px;
-     cursor: pointer;
-  }
-  #confirm .message {
-     text-align: left;
-  }
+  display: none;
+  background-color: rgb(78, 126, 236);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  position: fixed;
+  width: 200px;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: 368px;
+  padding: 6px 8px 8px;
+  box-sizing: border-box;
+  text-align: center;
+}
+#confirm button {
+  background-color: #48e5da;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 5px;
+  text-align: center;
+  width: 80px;
+  cursor: pointer;
+}
+#confirm .message {
+  text-align: left;
+}
 
-  #overlay {
-     position: fixed; /* Sit on top of the page content */
-     display: none; /* Hidden by default */
-     width: 100%; /* Full width (cover the whole page) */
-     height: 100%; /* Full height (cover the whole page) */
-     top: 0; 
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-     cursor: pointer; /* Add a pointer on hover */
-   }
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}

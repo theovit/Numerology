@@ -1,156 +1,246 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"
+    />
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="Calculation.1.js"></script>
-    <script>
+    <script></script>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
 
-    </script>
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-
-<body>
+  <body>
     <div id="outer-div">
-        <div class="inner-div">
-            <!--Start of Onsen Nav Bar-->
-            <ons-splitter>
-                <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
-                    <ons-page modifier="material modifier2">
-                        <ons-list>
-                            <!--Home Button in Nav Bar-->
-                            <ons-list-item onclick="fn.load('home.html')" tappable>
-                                Home
-                            </ons-list-item>
-                            <!--
-                            <ons-list-item onclick="fn.load('settings.html')" tappable>
-                                Settings
-                            </ons-list-item>
+      <div class="inner-div">
+        <!--Start of Onsen Nav Bar-->
+        <ons-splitter>
+          <ons-splitter-side
+            id="menu"
+            side="left"
+            width="220px"
+            collapse
+            swipeable
+          >
+            <ons-page modifier="material modifier2">
+              <ons-list>
+                <!--Home Button in Nav Bar-->
+                <ons-list-item onclick="fn.load('home.html')" tappable>
+                  Home
+                </ons-list-item>
+
+                <ons-list-item onclick="fn.load('about.html')" tappable>
+                  About
+                </ons-list-item>
+                <!--
                             <ons-list-item onclick="fn.load('about.html')" tappable>
                                 About
                             </ons-list-item>
                             -->
-                        </ons-list>
-                    </ons-page>
-                </ons-splitter-side>
-                <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
-            </ons-splitter>
-            <!--End of Onsen Nav Bar-->
-        </div>
+              </ons-list>
+            </ons-page>
+          </ons-splitter-side>
+          <ons-splitter-content
+            id="content"
+            page="home.html"
+          ></ons-splitter-content>
+        </ons-splitter>
+        <!--End of Onsen Nav Bar-->
+      </div>
     </div>
 
     <!--Start of Page Templet Home-->
     <template id="home.html">
-        <!--Start of Top Nav Bar-->
-        <ons-page>
-            <ons-toolbar>
-                <div class="left">
-                    <ons-toolbar-button onclick="fn.open()">
-                        <ons-icon icon="md-menu"></ons-icon>
-                    </ons-toolbar-button>
-                </div>
-                <div class="center">
-                    My First Numerology Project
-                </div>
-            </ons-toolbar>
-            <!--End of Top Nav Bar-->
-            <!--Start for Page Content-->
-
-            <ons-col>
-
-                <form>
-                    <ons-row>
-                        <p class="text">Please Enter Your Birth Date: MM/DD/YYYY</p>
-                    </ons-row>
-                    <ons-row>
-                        <ons-input tabindex="0" class="UserInput" autofocus inputmode="numeric" type="text"
-                            maxlength="2" name="userInputMonth" id='userInputMonth'
-                            modifier="transparent material underbar" placeholder="Month" float></ons-input>
-                    </ons-row>
-                    <ons-row>
-                        <ons-input tabindex="1" class="UserInput" inputmode="numeric" type="text" maxlength="2"
-                            name="userInputDay" id='userInputDay' modifier="transparent material underbar"
-                            placeholder="Day" float></ons-input>
-                    </ons-row>
-                    <ons-row>
-                        <ons-input tabindex="2" class="UserInput" inputmode="numeric" type="text" maxlength="4"
-                            name="userInputYear" id='userInputYear' modifier="transparent material underbar"
-                            placeholder="Year" float>
-                        </ons-input>
-                    </ons-row>
-                    <ons-row>
-                        <p class="text">Please Enter Your Full Name on Your Birth Certificate</p>
-                    </ons-row>
-                    <ons-row>
-                        <ons-input tabindex="3" class="UserInput" type="text" name="userInputFirstName"
-                            id='userInputFirstName' modifier="transparent material underbar" placeholder="First Name"
-                            float>
-                        </ons-input>
-                    </ons-row>
-                    <ons-row>
-                        <ons-input tabindex="4" class="UserInput" type="text" name="userInputMiddleName"
-                            id='userInputMiddleName' modifier="transparent material underbar" placeholder="Middle Name"
-                            float></ons-input>
-                    </ons-row>
-                    <ons-row>
-                        <ons-input tabindex="5" class="UserInput" type="text" name="userInputLastName"
-                            id='userInputLastName' modifier="transparent material underbar" placeholder="Last Name"
-                            float>
-                        </ons-input>
-                    </ons-row>
-                    <ons-row>
-                        <div tabindex="6" class="CalculateButton">
-                            <ons-button onclick="findY()">Calculate</ons-button>
-                        </div>
-                    </ons-row>
-                </form>
-                <ons-row>
-                    <div id="overlay">
-                        <div id="confirm">
-                            <div class="message"></div>
-                            <button class="yes">Vowel</button>
-                            <button class="no">Constant</button>
-                        </div>
-                    </div>
-                </ons-row>
-                <ons-row>
-                    <div id="LLNResult" class="text"></div>
-                </ons-row>
-                <ons-row>
-                    <div id="SNResult" class="text"></div>
-                </ons-row>
-                <ons-row>
-                    <div id="OPNResult" class="text"></div>
-                </ons-row>
-                <ons-row>
-                    <div id="PODNResult" class="text"></div>
-                </ons-row>
-                <ons-row>
-                        <div id="PersonalYear" class="text"></div>
-                    </ons-row>
-            </ons-col>
-            <!--End Page Content-->
-        </ons-page>
+      <!--Start of Top Nav Bar-->
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">
+            My First Numerology Project
+          </div>
+        </ons-toolbar>
+        <!--End of Top Nav Bar-->
+        <!--Start for Page Content-->
+        <ons-col>
+          <form>
+            <ons-row>
+              <p class="text">Please Enter Your Birth Date: MM/DD/YYYY</p>
+            </ons-row>
+            <ons-row>
+              <ons-input
+                tabindex="0"
+                class="UserInput"
+                autofocus
+                inputmode="numeric"
+                type="text"
+                maxlength="2"
+                name="userInputMonth"
+                id="userInputMonth"
+                modifier="transparent material underbar"
+                placeholder="Month"
+                float
+              ></ons-input>
+            </ons-row>
+            <ons-row>
+              <ons-input
+                tabindex="1"
+                class="UserInput"
+                inputmode="numeric"
+                type="text"
+                maxlength="2"
+                name="userInputDay"
+                id="userInputDay"
+                modifier="transparent material underbar"
+                placeholder="Day"
+                float
+              ></ons-input>
+            </ons-row>
+            <ons-row>
+              <ons-input
+                tabindex="2"
+                class="UserInput"
+                inputmode="numeric"
+                type="text"
+                maxlength="4"
+                name="userInputYear"
+                id="userInputYear"
+                modifier="transparent material underbar"
+                placeholder="Year"
+                float
+              >
+              </ons-input>
+            </ons-row>
+            <ons-row>
+              <p class="text">
+                Please Enter Your Full Name on Your Birth Certificate
+              </p>
+            </ons-row>
+            <ons-row>
+              <ons-input
+                tabindex="3"
+                class="UserInput"
+                type="text"
+                name="userInputFirstName"
+                id="userInputFirstName"
+                modifier="transparent material underbar"
+                placeholder="First Name"
+                float
+              >
+              </ons-input>
+            </ons-row>
+            <ons-row>
+              <ons-input
+                tabindex="4"
+                class="UserInput"
+                type="text"
+                name="userInputMiddleName"
+                id="userInputMiddleName"
+                modifier="transparent material underbar"
+                placeholder="Middle Name"
+                float
+              ></ons-input>
+            </ons-row>
+            <ons-row>
+              <ons-input
+                tabindex="5"
+                class="UserInput"
+                type="text"
+                name="userInputLastName"
+                id="userInputLastName"
+                modifier="transparent material underbar"
+                placeholder="Last Name"
+                float
+              >
+              </ons-input>
+            </ons-row>
+            <ons-row>
+              <div tabindex="6" class="CalculateButton">
+                <ons-button onclick="afterButtonPress()">Calculate</ons-button>
+              </div>
+            </ons-row>
+          </form>
+          <ons-row>
+            <div id="overlay">
+              <div id="confirm">
+                <div class="message"></div>
+                <button class="yes">Vowel</button>
+                <button class="no">Constant</button>
+              </div>
+            </div>
+          </ons-row>
+          <ons-row>
+            <div id="LLNResult" class="text"></div>
+          </ons-row>
+          <ons-row>
+            <div id="SNResult" class="text"></div>
+          </ons-row>
+          <ons-row>
+            <div id="OPNResult" class="text"></div>
+          </ons-row>
+          <ons-row>
+            <div id="PODNResult" class="text"></div>
+          </ons-row>
+          <ons-row>
+            <div id="PersonalYear" class="text"></div>
+          </ons-row>
+        </ons-col>
+        <!--End Page Content-->
+      </ons-page>
     </template>
     <!--End of Page Templet Home-->
-
-    <template id="alert-dialog.html">
-        <ons-alert-dialog id="my-alert-dialog" modifier="rowfooter">
-            <div class="alert-dialog-title">Alert</div>
-            <div class="alert-dialog-content">
-                It seems you have a Y in your name. Please, select whether it sounds like a Constant or a Vowel.
+    <!--Start of Page Templet About-->
+    <template id="about.html">
+      <!--Start of Top Nav Bar-->
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-toolbar-button onclick="fn.open()">
+              <ons-icon icon="md-menu"></ons-icon>
+            </ons-toolbar-button>
+          </div>
+          <div class="center">
+            My First Numerology Project
+          </div>
+        </ons-toolbar>
+        <!--End of Top Nav Bar-->
+        <!--Start for Page Content-->
+        <ons-col>
+          <ons-row>
+              <h1 class="text">About Me</h1>
+            <div class="text">
+              I was first introduced to Numerology from a friend, henceforth
+              Code, and he was introduced to it from another friend, henceforth
+              Dust, that had a vision about numbers. After Dust had this vision
+              he stated that an entity visited him and shared the knowledge to
+              find the right path of Numerology. To note, Dust had never heard
+              of Numerology before. This entity revealed the tital of a book
+              called, "Numerology: and The Divine Triangle" (by Faith Javane, &
+              Dusty Bunker). I'm a bit skeptical at this point, and I'm sure you
+              are too. Code has shared this information with me, I have never
+              meet Dust in person, however, the story is compelling. After Code
+              gave me my numbers and read from the book, I was shocked. There is
+              no way a book based on a sudo-science could be this accuret. I had
+              my reservations, then Code started reading a section of the book
+              that, is more or less, supposed to be your destiny. He read the
+              first 9 years of my life. Kinda hit home, not really sure what to
+              think about it. I don't remember much from that time. Then he got
+              to 10 - 19, I was 21 at the time so it was fresh in my mind. I
+              started crying about halfway through. I felt like this book knew
+              me better than i did and that's when I dove down the rabbit hole.
             </div>
-            <div class="alert-dialog-footer">
-                <ons-alert-dialog-button onclick="hideAlertDialog()">Constant</ons-alert-dialog-button>
-                <ons-alert-dialog-button onclick="hideAlertDialog()">Vowel</ons-alert-dialog-button>
-            </div>
-        </ons-alert-dialog>
+          </ons-row>
+        </ons-col>
+        <!--End Page Content-->
+      </ons-page>
     </template>
-
-</body>
-
+    <!--End of Page Templet About-->
+  </body>
 </html>
