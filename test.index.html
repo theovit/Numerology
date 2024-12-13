@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numerology Calculator</title>
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css" />
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css" />
+  <link rel="stylesheet" href="main.css" />
+
+  <!-- External Scripts -->
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="Calculation.1.js"></script>
+</head>
+
+<body>
+  <div id="outer-div">
+    <div class="inner-div">
+      <!-- Onsen Nav Bar -->
+      <ons-splitter>
+        <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+          <ons-page>
+            <ons-list>
+              <ons-list-item onclick="fn.load('home.html')" tappable>Home</ons-list-item>
+              <ons-list-item onclick="fn.load('about.html')" tappable>About</ons-list-item>
+            </ons-list>
+          </ons-page>
+        </ons-splitter-side>
+        <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+      </ons-splitter>
+    </div>
+  </div>
+
+  <!-- Home Template -->
+  <template id="home.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">My First Numerology Project</div>
+      </ons-toolbar>
+      <ons-col>
+        <form>
+          <ons-row>
+            <p class="text">Please Enter Your Birth Date: MM/DD/YYYY</p>
+          </ons-row>
+          <ons-row>
+            <ons-input tabindex="0" class="UserInput" inputmode="numeric" type="text" maxlength="2" name="userInputMonth" id="userInputMonth" modifier="transparent material underbar" placeholder="Month" float></ons-input>
+          </ons-row>
+          <ons-row>
+            <ons-input tabindex="1" class="UserInput" inputmode="numeric" type="text" maxlength="2" name="userInputDay" id="userInputDay" modifier="transparent material underbar" placeholder="Day" float></ons-input>
+          </ons-row>
+          <ons-row>
+            <ons-input tabindex="2" class="UserInput" inputmode="numeric" type="text" maxlength="4" name="userInputYear" id="userInputYear" modifier="transparent material underbar" placeholder="Year" float></ons-input>
+          </ons-row>
+          <ons-row>
+            <p class="text">Please Enter Your Full Name on Your Birth Certificate</p>
+          </ons-row>
+          <ons-row>
+            <ons-input tabindex="3" class="UserInput" type="text" name="userInputFirstName" id="userInputFirstName" modifier="transparent material underbar" placeholder="First Name" float></ons-input>
+          </ons-row>
+          <ons-row>
+            <ons-input tabindex="4" class="UserInput" type="text" name="userInputMiddleName" id="userInputMiddleName" modifier="transparent material underbar" placeholder="Middle Name" float></ons-input>
+          </ons-row>
+          <ons-row>
+            <ons-input tabindex="5" class="UserInput" type="text" name="userInputLastName" id="userInputLastName" modifier="transparent material underbar" placeholder="Last Name" float></ons-input>
+          </ons-row>
+          <ons-row>
+            <div tabindex="6" class="CalculateButton">
+              <ons-button onclick="afterButtonPress()">Calculate</ons-button>
+            </div>
+          </ons-row>
+        </form>
+        <ons-row>
+          <div id="overlay">
+            <div id="confirm">
+              <div class="message"></div>
+              <button class="yes">Vowel</button>
+              <button class="no">Constant</button>
+            </div>
+          </div>
+        </ons-row>
+        <ons-row>
+          <div id="LLNResult" class="text"></div>
+          <div id="SNResult" class="text"></div>
+          <div id="OPNResult" class="text"></div>
+          <div id="PODNResult" class="text"></div>
+          <div id="PersonalYear" class="text"></div>
+        </ons-row>
+      </ons-col>
+    </ons-page>
+  </template>
+
+  <!-- About Template -->
+  <template id="about.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">My First Numerology Project</div>
+      </ons-toolbar>
+      <ons-col>
+        <ons-row>
+          <h1 class="text">About Me</h1>
+          <div class="text">
+            <!-- About Content Here -->
+          </div>
+        </ons-row>
+      </ons-col>
+    </ons-page>
+  </template>
+</body>
+</html>
